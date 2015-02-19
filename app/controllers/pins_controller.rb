@@ -5,10 +5,9 @@ class PinsController < ApplicationController
 
   respond_to :html
 
-  def index
-    @pins = Pin.all
-    respond_with(@pins)
-  end
+ def index
+   @pins = Pin.all.order("created_at DESC")
+ end
 
   def show
     respond_with(@pin)
